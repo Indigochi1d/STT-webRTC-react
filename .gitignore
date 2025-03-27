@@ -4,3 +4,4 @@ backend/dist
 backend/key.json
 
 **/.env
+**/stt-api-key.json

@@ -19,7 +19,7 @@ function App() {
   const setUpWebSocket = () => {
     closeWebSocket();
 
-    const ws = new WebSocket("http://localhost:8080");
+    const ws = new WebSocket("ws://localhost:8080");
     ws.onopen = async () => {
       try {
         const SAMPLE_RATE = 16000;
@@ -29,7 +29,7 @@ function App() {
           audio: {
             sampleRate: SAMPLE_RATE,
             channelCount: 1,
-            echoCancellation: false,
+            echoCancellation: true,
           },
         });
         mediaRecorder.current = new MediaRecorder(stream);
@@ -38,7 +38,7 @@ function App() {
         });
 
         await audioContext.current.audioWorklet.addModule(
-          "./linear16-processor.js"
+          "/linear16-processor.js"
         );
 
         const source = audioContext.current.createMediaStreamSource(stream);
@@ -62,6 +62,9 @@ function App() {
         analyser.fftSize = 256;
         const dataArray = new Uint8Array(analyser.frequencyBinCount);
 
+        source.connect(processor.current);
+        processor.current.connect(audioContext.current.destination);
+
         source.connect(analyser);
 
         function detectSpeaking() {
@@ -74,6 +77,8 @@ function App() {
           } else {
             setIsSpeaking(false);
           }
+
+          requestAnimationFrame(detectSpeaking);
         }
         detectSpeaking();
 
