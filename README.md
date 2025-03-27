@@ -9,3 +9,6 @@
 3. 가공된 데이터 웹소켓 통신으로 서버에 던짐
 4. 서버에서 google STT api를 이용해 실제 변환된 문자열 데이터 받음
 5. 프론트로 던져줌
+
+![STT](https://github.com/user-attachments/assets/7a61850b-bc3e-4f7b-b606-f1dd0c77b4f4)
+
