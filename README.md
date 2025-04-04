@@ -11,3 +11,8 @@
 5. 프론트로 던져줌
 
 ![stt](https://github.com/user-attachments/assets/3769ee65-e5f7-4e49-8c73-06a4dd3a1e50)
+
+
+
+https://github.com/user-attachments/assets/39429441-c4e2-431d-9e82-f170d66007f8
+
