@@ -10,9 +10,10 @@
 4. 서버에서 google STT api를 이용해 실제 변환된 문자열 데이터 받음
 5. 프론트로 던져줌
 
+## ⚙️System Architecture
 ![stt](https://github.com/user-attachments/assets/3769ee65-e5f7-4e49-8c73-06a4dd3a1e50)
 
 
-
+## 📽Video
 https://github.com/user-attachments/assets/39429441-c4e2-431d-9e82-f170d66007f8
 
